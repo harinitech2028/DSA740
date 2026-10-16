@@ -1,0 +1,33 @@
+// Check Palindrome
+// 121 ==121 after reverse
+//T.C: O(logn) S.C: o(1)
+
+# include <iostream>
+# include <bits/stdc++.h>
+using namespace std;
+
+bool palindrome (int n)
+{
+    int ori = n;
+    int sum =0;
+    while (n!=0)
+        {
+            int last = n%10;
+            sum = sum *10 + last;
+            n=n/10;
+        }
+    if(ori== sum)
+        return true;
+
+    return false;
+}
+
+int main ()
+{
+    int n = 121;
+    bool ans = palindrome(n);
+    if(ans)
+        cout<<"Palindrome";
+    else
+        cout<<"Not Palindrome";
+}
