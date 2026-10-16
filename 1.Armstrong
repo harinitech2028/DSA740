@@ -1,5 +1,6 @@
 //ArmStrong Number
 // 153 = 1^(no_of_digits) + 5^(no_of_digits)+ 3^(no_of_digits)
+//T.C: O(logn) S.C: O(1)
 
 # include <iostream>
 # include <bits/stdc++.h>
