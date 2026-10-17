@@ -1,0 +1,51 @@
+//Reverse a Number
+// Example : 123 : 321
+//Brute Force
+//T.c: O(log(n))
+//S.C: o(log(n))
+// Convert to string --> reverse--> int
+
+# include <bits/stdc++.h>
+using namespace std;
+
+int reverse (int n)
+{
+    string s = to_string(n);
+    reverse(s.begin(),s.end());
+     n = stoi(s);
+    return n;
+}
+int main ()
+{
+    int n = 123;
+    int ans = reverse(n);
+    cout<<ans;
+}
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+//Reverse a Number
+// Example : 123 : 321
+//Optimal
+//T.c: O(log(n))
+//S.C: o(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+
+int reverse (int n)
+{
+    int sum = 0;
+    while (n!=0)
+        {
+            int last = n%10;
+            sum = sum *10 + last;
+            n=n/10;
+        }
+    return sum;
+}
+int main ()
+{
+    int n = 123;
+    int ans = reverse(n);
+    cout<<ans;
+}
