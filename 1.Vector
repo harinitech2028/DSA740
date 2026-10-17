@@ -1,0 +1,86 @@
+/**
+Vector :
+Header_File : # include <vector>
+---------------------------------------
+(i) Declaration -1  : vector<data_type> vec_name
+        eg: vector<int> v;
+        eg: vector <float> v;
+        eg: similarly for bool,string,char,double
+-------------------------------------------------
+(ii) Initialization: vector<data_type> vec_name = {values}
+    eg: vector <int> v = {1,2};
+    eg: vector<bool> v = {true,false}
+-----------------------------------------------------------
+(iii) Declaration- 2: vector <int> v (size,val)
+    eg: vector<int> v (1,0);
+    bool : true (default)
+    char : \0
+    string : " "
+==========================================================
+Inserting:
+(i)Method -1: vec_name.push_back(val) : insert at end
+eg: v.push_back(10)
+----------------------------------------------------------
+(ii)Method - 2: vec_name.insert (iterator,val) : insert at any pos.
+iterator : begin() // start
+            end() // points  after last element
+            begin() + 1 // second ele
+eg: v.insert (v.begin() + 2, 40)
+==========================================================
+Accessing
+(i)Method - 1: v[i]
+    eg: v[0];
+----------------------------------------------------------
+(ii)Method - 2: v.at (index) 
+    eg: v.at(3)
+----------------------------------------------------------------
+==========================================================
+Deletion:
+(i) Method - 1: vec_name. pop_back() // delete last ele
+                eg: v = [1,2,3,4]
+                v.pop_back() // [1,2,3]
+----------------------------------------------------------
+(ii) Method - 2: vec_name.erase (iterator)
+                eg: iterator : begin (),end()
+                    eg: v.erase (v.begin())
+==========================================================
+Searching:
+(i) Find : vec_name.find(start_iterator,end_iterator,key)
+    Returns iterator if found 
+            else : v.end()
+    eg: i = v.find(v.begin(),v.end() ,10)
+        i --> pointer 
+        *i --> value
+        i - v.begin() --> index
+==========================================================
+Traversing:
+for (auto i : v)
+    cout<<i;
+==========================================================
+Other Functions:
+(i) Size: v.size() // returns number of elements
+(ii) empty() : v.empty() // returns 1 : true , 0 : false
+==========================================================
+2-D Vector:
+vector<vector<int>v = {
+                        {1,2},
+                        {3,4}
+                        }
+(i)Traversing:
+    for (auto i : v)
+    {
+    for (auto j : i)
+    cout<<j
+    }
+
+    Method - 2:
+    for (int i =0;i<v.size()i++)
+    {
+    for (int j = 0;j<v[0].size();j++)
+    {
+    cout<<V[i][j];
+    }
+    }
+                                
+
+
