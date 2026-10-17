@@ -1,0 +1,109 @@
+//Check For prime 
+// Basic Idea : Prime no. 2 Factors ( 1 and itself)
+//Brute Force
+// T.C: O(n)
+//S.C: O(1)
+# include <bits/stdc++.h>
+using namespace std;
+
+bool isPrime (int n)
+{
+    int c =0;
+  for (int i  = 1;i<=n;i++)
+      {
+          if (n%i == 0)
+              c++;
+      }
+    if (c ==2)
+        return true;
+    return false;
+}
+int main ()
+{
+    int n = 7;
+    bool ans = isPrime(n);
+    if(ans)
+        cout<<"Prime"<<" ";
+    else
+        cout<<"Not Prime";
+}
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+
+//Check For prime 
+// Basic Idea : Prime no. 2 Factors ( 1 and itself)
+//Optimal
+// T.C: O(sqrt(n))
+//S.C: O(1)
+# include <bits/stdc++.h>
+using namespace std;
+
+bool isPrime (int n)
+{
+    int c =0;
+  for (int i  = 1;i*i<=n;i++)
+      {
+          if (n%i == 0)
+          {
+              c++;
+
+              if(n/i != i)
+                  c++;
+          }
+      }
+    if (c ==2)
+        return true;
+    return false;
+}
+int main ()
+{
+    int n = 6;
+    bool ans = isPrime(n);
+    if(ans)
+        cout<<"Prime"<<" ";
+    else
+        cout<<"Not Prime";
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+//Check For prime 
+// Basic Idea :(i) n == 0 ||1 not prime
+//(ii) n ==2 || n==3  prime
+//(iii) multiples of 2 and 3 are not prime
+//(iv) Prime no. are of form 6k+ 1 or 6k - 1
+//i.e 5,6,7 [ 5 and 7]
+// T.C: O(sqrt(n))
+//S.C: O(1)
+# include <bits/stdc++.h>
+using namespace std;
+
+bool isPrime (int n)
+{
+    
+  
+          if(n<=1 )
+              return false;
+          if (n ==2 || n == 3)
+              return true;
+
+          if(n%2 ==0 || n%3 ==0)
+              return false;
+            for (int i = 5; i*i <=n;i= i + 6)
+                {
+                    if (n%i == 0 || (n% (i + 2)) ==0)
+                        return false;
+                }
+    return true;
+          
+      }
+int main ()
+{
+    int n = 7;
+    bool ans = isPrime(n);
+    if(ans)
+        cout<<"Prime"<<" ";
+    else
+        cout<<"Not Prime";
+}
