@@ -1,0 +1,39 @@
+//Brute Force 
+//T.C: 0(n)
+//S.C: O(1)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    // code here
+    int sum = 0;
+    for (int i= 0;i<=n;i++)
+     sum+=i;
+    cout<<sum;
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+
+//Optimal Approach
+// T.C: 0(1) S.C: O(1)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    // code here
+    int sum =0;
+    sum = (n* (n + 1) )/2;
+    cout<<sum;
+
+    return 0;
+}
