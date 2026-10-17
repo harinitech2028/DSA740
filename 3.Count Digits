@@ -1,0 +1,63 @@
+// Count Digits of A Number:
+// Brute force : 0(log(n))
+//S.C: O(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+int count (int n)
+{
+    int c = 0;
+    while (n!=0)
+        {
+            c++;
+            n=n/10;
+        }
+    return c;
+}
+int main ()
+{
+    int n = 1234;
+    int ans = count(n);
+    cout<<ans;
+}
+-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+// Count Digits of A Number:
+// Better : 0(n)
+//S.C: O(n)
+// Convert num to string --> find length
+# include <bits/stdc++.h>
+using namespace std;
+int count (int n)
+{
+    string s = to_string(n);
+    return s.length();
+}
+int main ()
+{
+    int n = 1234;
+    int ans = count(n);
+    cout<<ans;
+}
+
+-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+// Count Digits of A Number:
+// Optimal: 0(1)
+//S.C: O(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+int count (int n)
+{
+    int c = 0;
+   c= log10(n) + 1;
+    return c;
+}
+int main ()
+{
+    int n = 1234;
+    int ans = count(n);
+    cout<<ans;
+}
