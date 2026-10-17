@@ -1,0 +1,33 @@
+//Brute Force
+// Convert to string and find sum
+//T.C: 0(Log(n) 
+//S.C: O(log(n))
+
+class Solution {
+  public:
+    int sumOfDigits(int n) {
+        // code here
+        string s = to_string(n);
+        int sum  = 0;
+        for (auto i: s)
+        {
+            sum+= i - '0';// - 0 to convert to num // 5- 0 = 5
+        }
+        return sum;
+    }
+};
+
+
+------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------
+  int sumOfDigits(int n) {
+        // code here
+        int sum  = 0;
+        while (n!=0)
+        {
+            int last = n%10;
+            sum +=last;
+            n=n/10;
+        }
+        return sum;
+    }
