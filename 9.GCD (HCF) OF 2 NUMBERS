@@ -1,0 +1,77 @@
+// GCD /HCF
+//Brute Force :  T.C : o(n)
+//S.C: O(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+
+int gcd (int n,int n2)
+{
+    int maxi = 1;
+    for (int i =2;i<=min (n,n2);i++)
+        {
+            if(n%i ==0 && n2%i ==0 )
+                maxi = max(maxi,i);
+        }
+    return maxi;
+}
+
+int main ()
+{
+    int n=6 ,n2 = 12;
+    int ans = gcd(n,n2);
+    cout<<ans;
+}
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+// GCD /HCF
+//Brute Force :  T.C : o(n)
+//S.C: O(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+
+int gcd (int n,int n2)
+{
+    int maxi = 1;
+    for (int i =min(n,n2);i>1;i--)
+        {
+            if(n%i ==0 && n2%i ==0 )
+                maxi = max(maxi,i);
+        }
+    return maxi;
+}
+
+int main ()
+{
+    int n=6 ,n2 = 12;
+    int ans = gcd(n,n2);
+    cout<<ans;
+}
+---------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+// GCD /HCF: [ECUCLIDEAN]
+//Brute Force :  T.C : o(n)
+//S.C: O(1)
+
+# include <bits/stdc++.h>
+using namespace std;
+
+int gcd (int n,int n2)
+{
+  while (n!=0)
+      {
+          int rem = n2%n;
+          n2 = n;
+          n = rem;
+      }
+    return n2;
+}
+
+int main ()
+{
+    int n=6 ,n2 = 12;
+    int ans = gcd(n,n2);
+    cout<<ans;
+}
