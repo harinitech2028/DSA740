@@ -1,0 +1,30 @@
+/**
+Multi-Set
+
+Header File:
+<set>
+
+--> Same as set
+--> Allows duplicates
+--> No random access
+
+(i)Declaration: multiset<int> s
+(ii)Insertion: s.insert (val)
+(iii)Deletion : s.erase (val) or s.erase (pos)
+
+        To remove only one occurance of element
+        --> Using iterator find 1 st occurance 
+        --> delete
+    eg:
+    it = ms.find(10)
+    if(it!=ms.end())
+        ms.erase(it)
+(iv)equal_range (ele) : returns two iterator
+        --> first occurance of element 
+        --> second : after last occurance of element
+
+    eg : it = ms.equal_range(3)
+        for (auto i = ms.first(); i!=ms.second();i++)
+        cout<<*i;
+
+(v) Index : distance(s.begin(),i)
