@@ -1,0 +1,12 @@
+/**
+Stack:
+Header File : <stack>
+
+(i)Declaration: stack<int> s
+(ii)Insertion: s.push(val)
+(iii)Deletion: s.pop()
+(iv)Top element: s.top()
+(v) Size: s.size()
+(vi)Traversing: while (!s.empty())
+                cout<<s.top()
+                s.pop()
