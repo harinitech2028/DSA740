@@ -1,0 +1,12 @@
+/**
+Unordered_multimap
+--> Same as multimap
+--> ordered
+Header File : <unordered>
+
+(i)Declaration: unordered_multimap<int> m
+(ii)Insertion: m.insert(val_pair)
+(iii)Erase : m.erase (key) or m.erase(pos)
+        To delete first occurance : find--> erase
+(iv)Accessing: using iterator : i = m.begin()
+                                cout<<i.first<<" "<<i.second
