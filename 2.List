@@ -1,0 +1,70 @@
+/***
+2. List : Doubly linked list:
+
+Headerfile : 
+<list>
+
+Same as vector:
+(i) Declaration 
+(ii) Inserting : [push_back]
+(iii) Deletion : [pop_back]
+(iv) Size , empty
+(v) Traverse : using auto
+
+-----------------------------------------------------------
+----------------------------------------------------------
+Difference:
+-> No random access : like v.begin() + 1 cannot do
+--> Use iterator.
+eg:
+    Method - 1: Advance :
+        eg: it = v.begin ();
+            advance(it,2)
+            // so changes original iterator : moves 2 step
+    ----------------------------------------------------
+    Method - 2: Next: 
+                // returns new iterator , does not change
+                original one
+        eg: it = v.begin();
+            it_new = next (it,2)
+            *(it_new) // gives value
+---------------------------------------------------------
+Insert :
+
+(i) vec_name. push_front (val) deletes first element
+(ii) vec_name.push_back(val) deletes last element
+(iii)insert ( it,val)
+        it = v.begin()
+        advance(it,1)
+        insert(it,20)
+---------------------------------------------------------
+---------------------------------------------------------
+Deletion:
+
+(i)Pop_front : vec_name.pop_front()
+(ii) Pop_back : v.pop_back()
+(iii)erase (it)
+        eg: it --> advance or next
+----------------------------------------------------------
+----------------------------------------------------------
+Accessing: 
+--> Using iterator:
+--> advance (it,1)
+*it --> value
+--> * (next (it,1)) value
+--> cannot access using index
+--------------------------------------------------------
+----------------------------------------------------------
+Updation:
+--> using iterator
+--> *it = 20
+----------------------------------------------------------
+---------------------------------------------------------
+Traversing:
+for (auto i = v.begin();i!=v.end();i++)
+{
+cout<<*i;
+----------------------------------------------------------
+---------------------------------------------------------
+}
+
