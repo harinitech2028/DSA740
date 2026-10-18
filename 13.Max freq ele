@@ -1,0 +1,68 @@
+/**
+Maximum Frequency element in Array
+(i) Brute Force : O(n2)
+    two loops
+***/
+# include <bits/stdc++.h>
+using namespace std;
+
+int freq (vector<int> v)
+{
+    int n  = v.size();
+    vector<bool> visited (n,false);
+    int maxi = INT_MIN;
+    int ele;
+
+    for (int i = 0 ; i<n;i++)
+        {
+            if(visited[i])
+                continue;
+
+            int c =1;
+            for (int j = i + 1;j<n;j++ )
+                {
+                if(v[i] == v[j])
+                {
+                    c++;
+                    visited[j] = true;
+                    
+                }
+                    if (c> maxi)
+                    {
+                        maxi = c;
+                        ele  = v[i];
+                    }
+                }
+        }
+    return ele;
+}
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+/**
+Maximum Frequency element in Array
+    (i) Optimal Approach : O(n)
+    unordered_Map
+***/
+# include <bits/stdc++.h>
+using namespace std;
+
+int freq (vector<int> v)
+{
+    int n  = v.size();
+    unordered_map<int,int>mp;
+    for (auto i:v)
+        mp[i]++;
+
+    int maxi = INT_MIN, ele;
+
+    for (auto i: mp)
+        {
+            if (i.second>maxi)
+            {
+                maxi = i.second;
+                ele = i.first;
+            }
+        }
+    return ele;
+}
