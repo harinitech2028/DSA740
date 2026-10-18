@@ -1,0 +1,13 @@
+/**
+Unordered Multiset:
+--> same as Multi set
+--> ordered
+
+Header File : <unordered_set>
+
+(i)Declaration: unordered_multiset<int> s
+(ii)Insertion: s.insert(val)
+(iii)Deletion: s.erase(pos) or s.erase(val)
+        --> for one occurance:
+        --> find iterator using find --> erase
+(iv)equal_range() : returns 2 iterator : first , second
