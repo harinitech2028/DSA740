@@ -1,0 +1,16 @@
+/**
+Priority Queue: Stores element based on priority
+--> Max_heap : large element --> high priority
+
+Header File : <queue>
+
+(i)Declaration: queue<int> q
+(ii)Insertion: q.push(ele)
+(iii)Deletion: q.pop()
+(iv)Accessing: q.top()
+(v)Size: q.size()
+(vi)Traverse: while (!s.empty())
+                {
+                    cout<<s.top()
+                    s.pop()
+                }
