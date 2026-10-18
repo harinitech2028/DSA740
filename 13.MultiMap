@@ -1,0 +1,17 @@
+/** Multimap:
+
+--> same as Map
+--> Allows duplicates
+
+Header File : <map>
+
+(i) Declaration: multimap<int> m
+(ii) Insertion: m.insert(pair value)
+(iii) Deletion: m.erase(key) or m.erase (pos)
+        --> To erase only one occurance :
+        --> find --> erase
+(iv) Find: it = m.find(key)
+(v)Accessing: using iterator
+             auto i = m.begin()
+             cout<<i->first <<" "<<i->second
+(vi)Updating: i->second = new_value
