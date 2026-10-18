@@ -1,5 +1,5 @@
 /**
-(i)Selection Sort
+(i)Selection Sort: T,C: O(n2) || S.C: O(1)
 Approach:
 --> Choose mini from rest [excluding first]
 --> swap with first element
