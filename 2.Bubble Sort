@@ -1,0 +1,26 @@
+/**
+(ii) Bubble Sort
+Approach:
+--> Continously swap the neighbouring element
+--> at the end of one iteration largest element is placed at correct pos(one complete inner j loop)
+
+--> i loop runs till n - 1: becuase last element already in correct pos or no need sorting
+--> j runs till n- i - 1: becuse at each iteration largest element bubbles up to end.
+
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+void sort (vector<int> &v)
+{
+    int n = v.size();
+    for (int i = 0;i<n - 1;i++)
+        {
+            for (int j = 0 ; j<n - i - 1;j++)
+                {
+                    if (v[j] >v[j + 1])
+                        swap(v[j],v[j + 1]);
+                }
+        }
+}
