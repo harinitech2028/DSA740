@@ -1,0 +1,14 @@
+/**
+Unordered Set
+--> Same as set
+--> Ordered
+
+Header File : <unordered_set>
+
+(i) Declaration: unordered_set<int> s;
+(ii)Insertion: s.insert(val)
+(iii)Deletion: s.erase (pos) or s.erase(val)
+(iv)Traverse: Using for loop
+(v) Find: s.find()
+(vi)Count: 1 : exists
+        0: not exists
