@@ -1,0 +1,30 @@
+/**
+Forward_list: singly linked list
+
+Header File :
+<forward_list>
+
+Similarity: same as list ,only difference no push_back or pop_back
+
+Difference:
+
+Insert:
+(i) push_front: v.push_front(30)
+(ii) insert_after (it,val)
+----------------------------------------------------------
+Delete:
+(i)pop_front: v.pop_front()
+(ii)erase_after (it,)
+----------------------------------------------------------
+Accessing:
+--> Using iterator (same as list)
+next or advance
+---------------------------------------------------------
+Traversing:
+for(int i  = v.begin() ; i!=v.end() ; i++)
+cout<<*i<<" ";
+----------------------------------------------------------
+Size:
+There is no size function in forward_list:
+--> distance(v.begin(),v.end());
+
