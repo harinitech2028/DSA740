@@ -1,0 +1,30 @@
+/**
+Deque: Doubly ended queue
+
+Header File : <deque>
+
+Similarity:
+--> Same as vector
+--> random access
+--> doubly ended so insert or delete from both ends
+
+-----------------------------------------------------------
+Insert:
+(i) push_front() : d.push_front(30)
+(ii)push_back () : d.push_back(40)
+(iii) insert  (pos,val): insert(v.begin() + 1,45)
+--------------------------------------------------------
+Delete:
+(i) pop_front() : d.pop_front()
+(ii)pop_back() : d.pop_back()
+(iii)erase(pos,value): d.erase(v.begin() + 1,30)
+---------------------------------------------------------
+Accessing:
+(i) Using indexing
+(ii) Using .at() : d.at(index)
+--------------------------------------------------------
+Traversing:
+(i) Same as vector : for loop
+---------------------------------------------------------
+Clear:
+d.clear() // removes all element
