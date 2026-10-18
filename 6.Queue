@@ -1,0 +1,18 @@
+/** 
+Queue: Front(Dequeue) [10 | 20| 30] rear(enqueue)
+
+Header File:
+<queue>
+
+(i)Declaration : queue <int> q;
+(ii)Insertion: q.push(val)
+(iii)Deletion: q.pop()
+(iv)Accessing: q.front() 
+               q.back()
+(v) Size: q.size()
+(vi)Traversing: while (!q.empty())
+                {
+                    cout<<q.front()
+                    q.pop()
+                }
+                
