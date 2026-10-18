@@ -1,0 +1,20 @@
+/** 
+Map :
+--> Stores key - value pair data
+--> No random access
+
+
+Header File <map>
+
+(i) Declaration: map<int,string> m{{1,"hi"}}
+(ii)Insertion: m.insert(value pair)
+(iii)Deletion: m.erase(key) or m.erase(pos)
+(iv) Accessing:
+        (i) Array method : m[key]
+        (ii)at: m.at(key)
+(v) Updation: m[key] = new_value
+(vi) Traversing: For loop
+(vii) Find: same as set :
+        it= m.find(ele)
+        while (it!=m.end())
+        cout<<it->first<<it->second
