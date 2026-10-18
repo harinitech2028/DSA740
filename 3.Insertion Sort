@@ -1,0 +1,33 @@
+/**
+(ii) Insertion Sort
+Approach:
+-->  Starts from second element assumnig first part sorted
+--> j holds index of before element to curr
+--> if  prev > curr then push prev element front
+--> place current elemnet in current position.
+
+Start with the second element as the first element is assumed to be sorted.
+Compare the second element with the first if the second is smaller then swap them.
+Move to the third element, compare it with the first two, and put it in its correct position
+
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+void sort (vector<int> &v)
+{
+    int n = v.size();
+    for (int i = 1;i<n;i++)
+        {
+            int ele = v[i];
+            int j = i - 1; // index before the curr ele
+
+            while (j>=0 && v[j] > ele)
+                {// pushing gretaer eleemnt forward or next index
+                    v[ j + 1] = v[j];
+                    j--;
+                }
+            v[j + 1] = ele;
+        }
+}
