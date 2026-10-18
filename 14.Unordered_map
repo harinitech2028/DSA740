@@ -1,0 +1,13 @@
+/**
+Unordered_map:
+--> same as map
+--> Ordered
+
+Header File : <unordered_map>
+
+(i)Decalaration: unordered_map<int> m
+(ii)Insertion: m.insert (pair value)
+(iii)Deletion: m.erase (key) or m.erase(iterator)
+(iv)Accessing: m[key] or m.at(key)
+(v)Updating: m[key] = new_value
+(vi)Find: it = m.find(key)
