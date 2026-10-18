@@ -1,0 +1,25 @@
+/**
+Set:
+--> No random access
+--> No need to specify index
+--> Doesn't allow duplicates
+Header File: <set>
+
+(i)Declaration: set<int> s;
+(ii)Insertion: s.insert(val)
+(iii)Deletion: s.erase(val) or s.erase(pos)
+(iv)Traverse: for (auto i = s.begin();i!=s.end();i++)
+                cout<*i
+(v)Find: 
+            s.find(val)
+            --> returns iterator if found
+                else 
+                returns s.end()
+        eg: auto i = s.find(30)
+        if(it!=s.end())
+        cout<<*i;
+--> i - s.begin() // gives index
+
+(vi)Count: s.count(val)
+--> 1 : if element exists
+---> 0 : if element doesn't exists
