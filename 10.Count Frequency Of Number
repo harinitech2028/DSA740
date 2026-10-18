@@ -1,0 +1,62 @@
+/**
+Count Frequency Of element
+
+(i)Brute Force: O(n2) S.C : 0(1)
+--> Using 2 loops
+---> Visited array : to keep track of elements visited [same ele can occur multiple times]
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>> freq (vector<int> v)
+{
+    int n  = v.size();
+    vector<bool> visited(n,false);
+    vector<vector<int>>res;
+
+    for (int i =0; i<n;i++)
+        {
+            if (visited[i])
+                continue;
+            int c = 1;
+            for (int j = i + 1; j<n;j++)
+                {
+                 if (v[i] == v[j])
+                 {
+                c++;
+                visited[j] = true;
+                }
+                }
+            res.push_back({v[i],c});
+            
+                
+        }
+    return res;
+}
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+/**
+Count Frequency Of element
+
+(i)Optimal : O(n) S.C : 0(1)
+--> Using unordered_Map
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>> freq (vector<int> v)
+{
+   unordered_map<int,int> mp;
+    for (auto i: v)
+        mp[i]++;
+    vector<vector<int>>res;
+    for (auto i: mp)
+        {
+            res.push_back({i.first,i.second});
+        }
+    return res;
+}
