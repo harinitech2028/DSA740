@@ -1,0 +1,26 @@
+
+/**
+Largest Element : O(n) ||S.C: O(1)
+#include <stdio.h>
+
+int find_largest(int* arr, int n) {
+    // write your solution below
+    int maxi = arr[0];
+
+    for (int i = 1;i<n;i++)
+    {
+        if (arr[i]> maxi)
+        maxi = arr[i];
+    }
+    return maxi;
+}
+-------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+
+(ii) Brute Force :
+
+--> sort 
+-->large element
+
+sort(arr.begin(), arr.end());
+int maxi = arr[arr.size() - 1];
