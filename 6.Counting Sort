@@ -1,0 +1,47 @@
+/** Counting Sort:
+--> Used for small range [ repeated set of elements]
+--> till the frequency store that element
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+int find_max(vector<int> v ,int n)
+{
+    int maxi = v[0];
+    for (int i = 1;i<n;i++)
+        {
+            if(v[i] >  maxi)
+                maxi = v[i];
+        }
+    return maxi;
+}
+void sort (vector<int> &v , int n)
+{
+    unordered_map <int,int> mp ;
+    for (auto i : v)
+        mp[i]++;
+
+    int maxi = find_max(v,n);
+    int idx = 0;
+    for (int i =0;i<=maxi;i++)
+        {
+            while (mp[i])
+                {
+                    mp[i] --; // count --
+                    v[idx] = i; // storing the value
+                    idx++;
+                }
+        }
+}
+
+int main ()
+{
+    vector<int> v = {2,2,1,2,1,3};
+    int n = v.size();
+
+    sort(v,n);
+
+    for (auto i: v)
+        cout<<i<<" ";
+}
