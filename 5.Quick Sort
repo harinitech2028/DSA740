@@ -1,0 +1,52 @@
+/**
+Quick sort
+--> Divide and Conquer Technique
+--> First choose a pivot element
+--> rearrange array based on pivot: [ left less than pivot],[right greater than pivot]
+-->sort left half of pivot 
+--> sort right half of pivot
+
+**/
+# include <bits/stdc++.h>
+using namespace std;
+
+int find_pivot (vector<int> &v,int low,int high)
+{
+    // Choosing pivot as last element
+    int pivot = v[high];
+    int i = low - 1;
+
+    for (int j = low;j<high;j++)
+        {
+            
+            if(v[j] <pivot)
+            {
+                i++;
+                swap(v[i],v[j]);
+            }
+            
+        }
+    swap(v[i + 1],v[high]);
+    return i + 1;
+}
+
+void sort (vector<int> &v, int low,int high)
+{
+    if (low<high)
+        {
+            int pivot = find_pivot(v,low,high);
+            sort(v,low,pivot - 1);
+            sort(v,pivot + 1,high);
+        }
+}
+
+int main ()
+{
+    vector<int> v = {15,12,3,16,2};
+    int n = v.size();
+
+    sort (v,0,n - 1);
+
+    for (auto i : v)
+        cout<<i<<" ";
+}
