@@ -1,0 +1,77 @@
+/**
+Merge Sort:
+
+--> Divide and conquer Technique
+--> Divide --> sort (conquer) --> merge
+--> Stable Algorithm [ Maintains original Order]
+--> T.c: O(n log (n))|| S.C: O(n)
+
+Code:
+
+**/
+
+# include <iostream>
+# include <bits/stdc++.h>
+using namespace std;
+
+void merge (vector<int> &v,int l,int m,int h)
+{
+    vector<int> temp;
+    int left =l;
+    int right = m + 1;
+
+    while (left<=m && right<=h)
+        {
+            if(v[left]<v[right])
+            {
+                temp.push_back(v[left]);
+                left++;
+            }
+            else
+            {
+                temp.push_back(v[right]);
+                right++;
+            }
+        }
+
+    // copying rem elements:
+    while (left<=m)
+        {
+            temp.push_back(v[left]);
+            left++;
+        }
+
+    while (right<=h)
+        {
+            temp.push_back(v[right]);
+            right++;
+        }
+
+    for (int i = l;i<=h;i++)
+        {
+            v[ i ] = temp[i - l];
+        }
+        
+    
+}
+
+void sort (vector<int> &v, int l , int h)
+{
+    if (l>=h)
+        return ;
+
+    int mid = (l + h)/2;
+    // Dividing the array into two
+    sort(v,l,mid); // First half
+    sort(v,mid + 1,h);//Second Half
+    merge(v,l,mid,h) ; //Merging
+}
+
+int main ()
+{
+    vector<int> v = {15,12,3,16,2};
+    int n = v.size();
+    sort(v,0,n - 1);
+    for (auto i : v)
+        cout<<i<<" ";
+}
