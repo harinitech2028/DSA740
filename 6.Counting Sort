@@ -1,6 +1,7 @@
 /** Counting Sort:
 --> Used for small range [ repeated set of elements]
 --> till the frequency store that element
+-->T.c: O(n)|| S.Ca: O(n)
 
 **/
 # include <bits/stdc++.h>
