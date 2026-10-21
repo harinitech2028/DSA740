@@ -1,0 +1,43 @@
+
+(i) Brute Force : O(n2)
+
+class Solution {
+  public:
+    int countDistinct(vector<int>& arr) {
+        // code here
+        int n = arr.size();
+        int c =0;
+        for (int i = 0;i<n;i++)
+        {
+            bool duplicate = false;
+            for (int j = 0;j<i;j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    duplicate = true;
+                    break;
+                }
+           
+            }
+              
+             if (!duplicate)
+             c++;
+        }
+        return c;
+    }
+};
+
+-------------------------------------------------------
+(ii) Optimal : T.C: O(n) || S.C: O(n)
+
+class Solution {
+  public:
+    int countDistinct(vector<int>& arr) {
+        // code here
+        unordered_set<int> s;
+        for (auto i : arr)
+            s.insert(i);
+            
+        return s.size();
+    }
+};
