@@ -1,0 +1,29 @@
+(i) Brute Force : O(N) || S.C: O(N)
+--> Using recurssion
+
+  int nthFibonacci(int n) {
+        // code here
+        if (n<=1)
+        return n;
+        
+        return nthFibonacci(n - 1) + nthFibonacci(n - 2);
+    }
+  -----------------------------------------------------------
+  (ii) Optimal : O(n) || s.c: O(1)
+
+  int fibo (int n)
+{
+   int n1 =0,n2 = 1,n3 = 0;
+   
+    if (n <= 1)
+        return n;
+
+for (int i = 2;i <=n;i++)
+        {
+            n3 = n1 + n2;
+            n1 = n2;
+            n2= n3;
+           
+        }
+    return n3;
+}
