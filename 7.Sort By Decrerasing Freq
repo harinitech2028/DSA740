@@ -1,0 +1,44 @@
+(i) 
+--> given array 
+--> sort the array based on high freq occurs first 
+eg: arr [ 1,2,3,1,3,3]
+ans: [3,3,3,1,1,2] 
+
+class Solution {
+  public:
+  
+  static bool compare (pair<int,int> a, pair<int,int> b)
+  {
+      if (a.second!=b.second)
+      return a.second>b.second;
+      
+      return a.first<b.first;
+      
+      
+  }
+    vector<int> sortByFreq(vector<int>& arr) {
+        // code here
+        unordered_map<int,int> mp;
+        
+        for (auto i : arr)
+        mp[i]++;
+        
+        
+        vector<pair<int,int>>v;
+        
+        for (auto i :mp)
+        v.push_back({i.first,i.second});
+        
+        sort(v.begin(),v.end(),compare);
+        
+        vector<int> ans;
+        
+        for (auto i : v)
+        for (int j  =0;j<i.second;j++)
+        ans.push_back(i.first);
+        return ans;
+        
+        
+        
+    }
+};
