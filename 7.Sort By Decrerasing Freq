@@ -4,6 +4,9 @@
 eg: arr [ 1,2,3,1,3,3]
 ans: [3,3,3,1,1,2] 
 
+T.C: O(nlogn) : sorting
+S.C: O(n) // const ignored
+
 class Solution {
   public:
   
