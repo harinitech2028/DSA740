@@ -1,0 +1,43 @@
+--> Given array 
+--> return the index of  first element that occurs twice
+eg : arr= [5,3,4,5,3] 
+both 5 and 3 occurs twice , but 5 no. occurs first [0 ] index
+
+(i) Brute Force : O(n) || S.c: O(1)
+
+class Solution {
+  public:
+    int firstRepeated(vector<int> &arr) {
+        // code here
+        for (int i =0;i<arr.size();i++)
+        {
+            for (int j =i + 1; j<arr.size();j++)
+            {
+                if (arr[i] == arr[j])
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+};
+
+
+
+--------------------------------------------
+(ii) Optimal : T.C: O(n) || S.C: O(n)
+class Solution {
+  public:
+    int firstRepeated(vector<int> &arr) {
+        // code here
+        unordered_map<int,int> mp;
+        for (auto i : arr)
+        mp[i]++;
+        
+        for (int i = 0;i<arr.size();i++)
+        {
+            if(mp[arr[i]] > 1)
+            return i + 1;
+        }
+        return -1;
+    }
+};
