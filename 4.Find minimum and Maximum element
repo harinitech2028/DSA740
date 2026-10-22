@@ -1,0 +1,44 @@
+4. Finding Min and Max element
+
+(i) Brute Force : T.C: O(nlogn) || S.C: O(1)
+
+--> sorting
+--> returnong 1 st and last elemet
+
+class Solution {
+  public:
+    vector<int> getMinMax(vector<int> &arr) {
+        // code here
+        vector<int> ans;
+        int n = arr.size();
+        sort(arr.begin(),arr.end());
+        ans.push_back(arr[0]);
+        ans.push_back(arr[n- 1]);
+        return ans;
+    }
+};
+------------------------------------------
+(ii) Optimal : T.C: O(n) || S.C: O(1)
+
+--> iterating through one loop
+--> finding max and mini
+
+class Solution {
+  public:
+    vector<int> getMinMax(vector<int> &arr) {
+        // code here
+        vector<int> ans;
+        int mini = INT_MAX,maxi = INT_MIN;
+        
+        for (auto i : arr)
+        {
+            if (i>maxi)
+            maxi = i;
+             if (i<mini)
+            mini = i;
+        }
+        ans.push_back(mini);
+        ans.push_back(maxi);
+        return ans;
+    }
+};
