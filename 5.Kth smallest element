@@ -1,0 +1,74 @@
+5. Find kth minimum and Largest element:
+
+
+(i) Brute FORCE: T.C: O(nlogn) || S.C: O(n)
+
+class Solution {
+  public:
+    int kthSmallest(vector<int> &arr, int k) {
+        // code here
+        map<int,int> mp;
+        for(auto i: arr)
+        mp[i]++;
+        
+        int idx = 0;
+        for (auto i : mp)
+        {
+            for (int j = 0; j<i.second;j++)
+            {
+                arr[idx] = i.first;
+                idx++;
+            }
+        }
+        return arr[k - 1];
+        
+    }
+};
+---------------------------------------------
+(ii) Better Force: T.C: O(nlogn) || S.C: O(1)
+
+class Solution {
+  public:
+    int kthSmallest(vector<int> &arr, int k) {
+        // code here
+        sort(arr.begin(),arr.end());
+        return arr[k - 1];
+    }
+};
+-----------------------------------------------------------------------5
+(iii) Quick Select : O(n)
+
+class Solution {
+  public:
+    int kthSmallest(vector<int> &arr, int k) {
+        // code here
+        int target = k - 1;
+        int n = arr.size();
+        int low = 0, high = n - 1;
+        while (low<=high)
+        {
+            int i  =low - 1;
+            int pivot = arr[high];
+            for (int j =low;j<high;j++)
+            {
+                if (arr[j] <pivot)
+                {
+                    i++;
+                    swap(arr[i],arr[j]);
+                }
+                
+            }
+            i++;
+            swap(arr[i],arr[high]);
+            
+            if(i ==target)
+            return arr[i];
+            else if (i <target)
+            low = 1 + i;
+            else
+            high = i - 1;
+        }
+        return -1;
+        
+    }
+};
